@@ -35,7 +35,11 @@ class SleepNightAdapter : RecyclerView.Adapter<SleepNightAdapter.SleepNightViewH
 
         fun bind(sleepNight: SleepNight) {
             binding.tvText.text = sleepNight.sleepQuality.toString()
-
+            if (sleepNight.sleepQuality <= 1) {
+                binding.tvText.setTextColor(Color.RED)
+            } else {
+                binding.tvText.setTextColor(Color.BLACK)
+            }
         }
     }
 }
